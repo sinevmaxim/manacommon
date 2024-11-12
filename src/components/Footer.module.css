@@ -1,0 +1,94 @@
+.footer {
+	clear: both;
+	color: #fff;
+	padding: 2rem 0;
+	overflow: hidden;
+}
+
+.footerInnerPadded {
+	padding: 2rem 1.5rem;
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+.subscribe {
+	flex: 2;
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+}
+
+.emailInputWrapper {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+.emailInput {
+	padding: 10px 15px;
+	transition: background .15s ease-out, color .15s ease-out, placeholder .15s ease-out;
+	background: rgba(35, 35, 47, .5);
+	color: #fff;
+	border-radius: 100px;
+	border: 1px solid hsla(0, 0%, 100%, .5);
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: .8rem;
+	width: 100%;
+	display: block;
+	font-weight: 700;
+}
+
+.subscribeButton {
+	border-radius: 0 50px 50px 0;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0 30px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 16px;
+	border: 0 !important;
+	vertical-align: middle;
+	background: #74748d;
+	color: #fff;
+}
+
+.socialMediaWrapper {
+	display: flex;
+	gap: 50px;
+}
+
+.links {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.divisions {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.link {
+	line-height: 1.5em;
+	color: #C6C6C6;
+	text-transform: uppercase;
+}
+
+@media only screen and (min-width: 980px) {
+	.footerInnerPadded {
+		 padding: 3rem;
+	}
+
+	.emailInputWrapper {
+		margin-bottom: 3rem;
+		width: 455px;
+	}
+}

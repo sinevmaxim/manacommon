@@ -1,0 +1,54 @@
+.prevButton, .nextButton {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 54px;
+	height: 38px;
+	background-color: #5CA1F3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.prevButton {
+	left: 0;
+	border-radius: 0 16px 16px 0;
+}
+
+.nextButton {
+	right: 0;
+	border-radius: 16px 0 0 16px;
+}
+
+.reviewImage, .selectedReviewImage {
+	border-radius: 16px;
+}
+
+.reviewImage {
+	width: inherit;
+	height: inherit;
+}
+
+.selectedReviewImage {
+	width: 494px;
+	height: 630px;
+}
+
+.selectedReviewInfoWrapper {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 80px;
+	top: 40%;
+	transform: translate(-100%, -50%);
+	color: #000;
+	gap: 10px;
+	font-family: Neue Haas Grotesk Display Pro;
+
+}
+
+.ratingWrapper {
+	display: flex;
+	padding-bottom: 10px;
+}
