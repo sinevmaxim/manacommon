@@ -90,6 +90,10 @@
 	text-transform: uppercase;
 }
 
+.additionalLink {
+	color: #616166;
+}
+
 .link > span:hover {
 	border-bottom: 1px solid #C6C6C6;
 }

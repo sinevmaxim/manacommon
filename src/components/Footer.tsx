@@ -110,8 +110,17 @@ const Footer = (props: Props) => {
 					</div>
 
 					<div style={{marginTop: '2.5rem', marginBottom: 30}}>
-
 						<GradientBar height={1}/>
+					</div>
+
+					<div
+						style={{display: 'flex', justifyContent: 'space-between', textTransform: 'uppercase', lineHeight: '20px'}}>
+						<span className={styles.additionalLink}> © 2024 Mana Common. All Rights Reserved.</span>
+						<div style={{display: 'flex', gap: 10}}>
+							<span className={styles.additionalLink}>Privacy</span>
+							<span className={styles.additionalLink}> · </span>
+							<span className={styles.additionalLink}>Terms</span>
+						</div>
 					</div>
 				</div>
 			</footer>
