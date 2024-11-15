@@ -47,7 +47,7 @@ const TestimonialsAndReviews = ({reviews}: Props) => {
 
 	return (
 		<div
-			style={{width: '100vw', backgroundColor: '#fff', height: '90vh', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden'}}>
+			style={{width: '100vw', backgroundColor: '#fff', height: '90vh', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden', color: '#000'}}>
 			<div className={styles.prevButton} onClick={movePrev}>
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">

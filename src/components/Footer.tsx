@@ -1,9 +1,10 @@
 import styles from './Footer.module.css';
-import FacebookIcon from "./icons/Facebook";
-import XIcon from "./icons/X";
-import TikTokIcon from "./icons/TikTok";
-import LinkedInIcon from "./icons/LinkedIn";
-import YouTubeIcon from "./icons/YouTube";
+import FacebookIcon from "./CompanyIcons/Facebook";
+import XIcon from "./CompanyIcons/X";
+import TikTokIcon from "./CompanyIcons/TikTok";
+import LinkedInIcon from "./CompanyIcons/LinkedIn";
+import YouTubeIcon from "./CompanyIcons/YouTube";
+import GradientBar from "./GradientBar";
 
 type Props = {};
 
@@ -38,26 +39,80 @@ const Footer = (props: Props) => {
 							</div>
 						</div>
 						<div className={styles.links}>
-							<a className={styles.link}>Home</a>
-							<a className={styles.link}>About</a>
-							<a className={styles.link}>Events</a>
-							<a className={styles.link}>News</a>
-							<a className={styles.link}>Contact</a>
+							<a className={styles.link}><span>Home</span></a>
+							<a className={styles.link}><span>About</span></a>
+							<a className={styles.link}><span>Events</span></a>
+							<a className={styles.link}><span>News</span></a>
+							<a className={styles.link}><span>Contact</span></a>
 						</div>
 						<div className={styles.divisions}>
-							<a className={styles.link}>Mana Common</a>
-							<a className={styles.link}>Impact</a>
-							<a className={styles.link}>Properties</a>
-							<a className={styles.link}>Commerce</a>
-							<a className={styles.link}>Culture</a>
-							<a className={styles.link}>Tech</a>
-							<a className={styles.link}>Agro</a>
-							<a className={styles.link}>Fashion</a>
-							<a className={styles.link}>Wynwood</a>
-							<a className={styles.link}>Hub</a>
+							<a href="https://manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/09/mana-common-icon.svg"
+									 alt="Mana Common"/>
+								<span>Mana Common</span>
+							</a>
+							<a href="https://impact.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/03/mana-impact-icon.svg"
+									 alt="Mana impact"/>
+								<span>Impact</span>
+							</a>
+							<a href="https://properties.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/03/mana-properties-icon.svg"
+									 alt="Mana properties"/>
+								<span>Properties</span>
+							</a>
+							<a href="https://commerce.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/03/mana-commerce-icon.svg"
+									 alt="Mana commerce"/>
+								<span>Commerce</span>
+							</a>
+							<a href="https://culture.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/03/mana-culture-icon.svg"
+									 alt="Mana culture"/>
+								<span>Culture</span>
+							</a>
+							<a href="https://tech.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/03/mana-tech-icon.svg"
+									 alt="Mana tech"/>
+								<span>Tech</span>
+							</a>
+							<a href="https://agro.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/03/mana-agro-icon.svg"
+									 alt="Mana agro"/>
+								<span>Agro</span>
+							</a>
+							<a href="https://fashion.manacommon.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://m.mana1.co/wp-content/uploads/2023/06/fashion-icon.svg"
+									 alt="Mana Fashion Icon"/>
+								<span>Fashion</span>
+							</a>
+							<a href="https://manawynwood.com" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://m.mana1.co/wp-content/uploads/2023/06/wynwood-icon.svg"
+									 alt="Mana Wynwood Logo"/>
+								<span>Wynwood</span>
+							</a>
+							<a href="https://hubs.manacommon.com/" className={styles.divisionsLink}>
+								<img className={styles.divisionsIcon}
+									 src="https://a.mana1.co/2022/09/mana-common-icon.svg"
+									 alt="Mana Hubs Logo"/>
+								<span>Mana Hubs</span>
+							</a>
 						</div>
 					</div>
 
+					<div style={{marginTop: '2.5rem', marginBottom: 30}}>
+
+						<GradientBar height={1}/>
+					</div>
 				</div>
 			</footer>
 	);
