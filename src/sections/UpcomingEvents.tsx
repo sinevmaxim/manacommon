@@ -9,7 +9,7 @@ type Props = {};
 const UpcomingEvents = (props: Props) => {
 	return (
 		<div style={{height: 924, backgroundImage: `url(${process.env.PUBLIC_URL}/Events-BG.png)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backdropFilter: 'blur(8px)'}}>
-			<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '25px 0 30px 0'}}>
+			<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '35px 0 35px 0'}}>
 				<h1 style={{fontFamily: 'Neue Haas Grotesk Display Pro', fontSize: 54, fontWeight: 700, margin: 0}}>Upcoming
 					Events</h1>
 				<p style={{fontSize: 18, margin: 0}}>Check out the events coming to our neighborhoods</p>
