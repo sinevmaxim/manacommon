@@ -23,6 +23,8 @@
 
 .reviewImage, .selectedReviewImage {
 	border-radius: 16px;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	opacity: 1;
 }
 
 .reviewImage {
@@ -45,8 +47,32 @@
 	color: #000;
 	gap: 10px;
 	font-family: Neue Haas Grotesk Display Pro;
-
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	opacity: 1;
 }
+
+.selectedReviewInfoWrapper.fadeIn {
+	opacity: 1;
+}
+
+.selectedReviewInfoWrapper.fadeOut {
+	opacity: 0;
+}
+
+.selectedReviewImage.slideOutLeft {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+.selectedReviewImage.slideOutRight {
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+.reviewImage.slideIn {
+	transform: translateX(0);
+}
+
 
 .ratingWrapper {
 	display: flex;

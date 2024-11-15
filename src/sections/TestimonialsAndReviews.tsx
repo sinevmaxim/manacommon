@@ -2,8 +2,6 @@ import {createRef, RefObject, useRef, useState} from "react";
 import {exists} from "../tools/Null";
 import styles from "./TestimonialsAndReviews.module.css";
 
-
-
 interface Review {
 	text: string;
 	image: string;
@@ -17,29 +15,44 @@ type Props = {
 	reviews: Review[];
 };
 
-enum Status {
-	Selected,
-	Deleting,
-	Default
+enum TransitionDirection {
+	Left,
+	Right
 }
 
 const TestimonialsAndReviews = ({reviews}: Props) => {
 	const currentImageRef = useRef<HTMLDivElement>(null);
 
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [statusByReviewId, setStatusByReviewId] = useState<Map<number, Status>>(
-		new Map(
-			reviews.map((review, index) =>
-				[index, index == currentIndex ? Status.Selected : Status.Default])
-		)
-	)
+	const [isTransitioning, setIsTransitioning] = useState(false);
+	const [transitionDirection, setTransitionDirection] = useState<TransitionDirection>(TransitionDirection.Left);
 
 	const moveNext = () => {
-		setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+		const nextIndex = Math.min(currentIndex + 1, reviews.length - 1);
+
+		if (nextIndex == currentIndex) return;
+
+		setIsTransitioning(true);
+		setTransitionDirection(TransitionDirection.Right);
+
+		setTimeout(() => {
+			setCurrentIndex(nextIndex);
+			setIsTransitioning(false);
+		}, 500);
 	};
 
 	const movePrev = () => {
-		setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+		const prevIndex = Math.max(currentIndex - 1, 0);
+
+		if (prevIndex == currentIndex) return;
+
+		setIsTransitioning(true);
+		setTransitionDirection(TransitionDirection.Left);
+
+		setTimeout(() => {
+			setCurrentIndex(prevIndex);
+			setIsTransitioning(false);
+		}, 500);
 	};
 
 	if (!exists(reviews)) return null;
@@ -51,14 +64,14 @@ const TestimonialsAndReviews = ({reviews}: Props) => {
 			<div className={styles.prevButton} onClick={movePrev}>
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-						<path d="M8 13.0581L2 7.0581L8 1.05811" stroke="white" stroke-width="2"/>
+						<path d="M8 13.0581L2 7.0581L8 1.05811" stroke="white" strokeWidth="2"/>
 					</svg>
 				</p>
 			</div>
 			<div className={styles.nextButton} onClick={moveNext}>
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-						<path d="M1 1.06592L7 7.06592L1 13.0659" stroke="white" stroke-width="2"/>
+						<path d="M1 1.06592L7 7.06592L1 13.0659" stroke="white" strokeWidth="2"/>
 					</svg>
 				</p>
 			</div>
@@ -73,12 +86,13 @@ const TestimonialsAndReviews = ({reviews}: Props) => {
 					if (index == currentIndex) {
 					return <div style={{position: 'relative'}}>
 						<img
-							className={styles.selectedReviewImage}
+							className={`${styles.selectedReviewImage} ${isTransitioning && (transitionDirection === TransitionDirection.Right ? styles.slideOutLeft : styles.slideOutRight)}`}
 							src={`${process.env.PUBLIC_URL}/${review.image}`} alt={`${review.name} Review`}/>
 						<div
-							className={styles.selectedReviewInfoWrapper}>
+							className={`${styles.selectedReviewInfoWrapper} ${isTransitioning && styles.fadeOut}`}>
 							<div className={styles.ratingWrapper}>
-								{Array(review.rating).fill(0).map((_, index) => <img key={index} src={`${process.env.PUBLIC_URL}/Star-Icon.png`}/>)}
+								{Array(review.rating).fill(0).map((_, index) =>
+									<img key={index} src={`${process.env.PUBLIC_URL}/Star-Icon.png`}/>)}
 							</div>
 							<p style={{maxWidth: 442, fontSize: 46}}>
 								{review.text}
@@ -91,7 +105,7 @@ const TestimonialsAndReviews = ({reviews}: Props) => {
 					} else {
 						return <div style={{width: 295, height: 376}}>
 							<img
-								className={styles.reviewImage}
+								className={`${styles.reviewImage} ${isTransitioning && styles.slideIn}`}
 								src={`${process.env.PUBLIC_URL}/${review.image}`}
 								alt={`${review.name} Review`}/>
 						</div>;
