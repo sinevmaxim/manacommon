@@ -84,31 +84,34 @@ const TestimonialsAndReviews = ({reviews}: Props) => {
 					if (index < currentIndex) return null
 
 					if (index == currentIndex) {
-					return <div style={{position: 'relative'}}>
-						<img
-							className={`${styles.selectedReviewImage} ${isTransitioning && (transitionDirection === TransitionDirection.Right ? styles.slideOutLeft : styles.slideOutRight)}`}
-							src={`${process.env.PUBLIC_URL}/${review.image}`} alt={`${review.name} Review`}/>
-						<div
-							className={`${styles.selectedReviewInfoWrapper} ${isTransitioning && styles.fadeOut}`}>
-							<div className={styles.ratingWrapper}>
-								{Array(review.rating).fill(0).map((_, index) =>
-									<img key={index} src={`${process.env.PUBLIC_URL}/Star-Icon.png`}/>)}
-							</div>
-							<p style={{maxWidth: 442, fontSize: 46}}>
-								{review.text}
-							</p>
-							<p style={{maxWidth: 442, fontSize: 22}}>{review.name}</p>
-							<p style={{maxWidth: 442, fontSize: 14}}>{review.role}</p>
-							<p style={{maxWidth: 442, fontSize: 14}}>{review.company}</p>
-						</div>
-					</div>;
+						return (
+							<div style={{position: 'relative'}}>
+								<img
+									className={`${styles.selectedReviewImage}`}
+									src={`${process.env.PUBLIC_URL}/${review.image}`} alt={`${review.name} Review`}/>
+								<div
+									className={`${styles.selectedReviewInfoWrapper} ${isTransitioning && styles.fadeOut}`}>
+									<div className={styles.ratingWrapper}>
+										{Array(review.rating).fill(0).map((_, index) =>
+											<img key={index} src={`${process.env.PUBLIC_URL}/Star-Icon.png`}/>)}
+									</div>
+									<p style={{maxWidth: 442, minWidth: 442, fontSize: 46}}>
+										{review.text}
+									</p>
+									<p style={{maxWidth: 442, minWidth: 442, fontSize: 22}}>{review.name}</p>
+									<p style={{maxWidth: 442, minWidth: 442, fontSize: 14}}>{review.role}</p>
+									<p style={{maxWidth: 442, minWidth: 442, fontSize: 14}}>{review.company}</p>
+								</div>
+							</div>);
 					} else {
-						return <div style={{width: 295, height: 376}}>
-							<img
-								className={`${styles.reviewImage} ${isTransitioning && styles.slideIn}`}
-								src={`${process.env.PUBLIC_URL}/${review.image}`}
-								alt={`${review.name} Review`}/>
-						</div>;
+						return (
+							<div style={{width: 283, height: 376}}>
+								<img
+									className={`${styles.reviewImage}`}
+									src={`${process.env.PUBLIC_URL}/${review.image}`}
+									alt={`${review.name} Review`}/>
+							</div>
+						);
 					}
 				})}
 			</div>
