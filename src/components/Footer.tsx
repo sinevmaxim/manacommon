@@ -17,8 +17,8 @@ const Footer = (props: Props) => {
 							<img
 								src="https://manacommon.com/wp-content/uploads/2022/09/mana-common-icon.svg" width="50"
 								alt="Mana Common Logo Icon"/>
-							<h2>Join our community</h2>
-							<p>Subscribe to receive updates from Mana Common:</p>
+							<h2 className={styles.joinText}>Join our community</h2>
+							<p className={styles.subscribeText}>Subscribe to receive updates from Mana Common:</p>
 							<form action={"https://manacommon.com/subscribe"}>
 								<div className={styles.emailInputWrapper}>
 									<label>

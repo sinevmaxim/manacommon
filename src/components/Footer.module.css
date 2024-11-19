@@ -111,6 +111,20 @@
 	color: #fff
 }
 
+.joinText {
+	font-weight: 900;
+	font-size: 40px;
+	font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}
+
+.subscribeText {
+	font-weight: 300;
+	font-size: 16px;
+	margin-bottom: 20px;
+	line-height: 30px;
+	font-family: 'Space Grotesk', sans-serif;
+}
+
 @media only screen and (min-width: 980px) {
 	.footerInnerPadded {
 		 padding: 3rem;
