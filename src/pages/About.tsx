@@ -14,7 +14,6 @@ const About = (props: Props) => {
 			<AboutSection/>
 			<GradientBar/>
 			<MiamiCommitment/>
-			<GradientBar/>
 			<Footer/>
 		</Page>
 	);

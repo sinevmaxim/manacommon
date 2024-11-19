@@ -10,6 +10,8 @@ type Props = {};
 
 const Footer = (props: Props) => {
 	return (
+		<>
+			<GradientBar/>
 			<footer className={styles.footer}>
 				<div className={styles.footerInnerPadded}>
 					<div style={{display: 'flex', width: '100%'}}>
@@ -124,6 +126,8 @@ const Footer = (props: Props) => {
 					</div>
 				</div>
 			</footer>
+		</>
+
 	);
 };
 export default Footer;
