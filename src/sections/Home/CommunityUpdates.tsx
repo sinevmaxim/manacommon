@@ -1,7 +1,7 @@
-import Carousel from "../components/Carousel";
-import GradientBar from "../components/GradientBar";
-import VideoCard from "../components/VideoCard";
-import NewsCard from "../components/NewsCard";
+import Carousel from "../../components/Carousel";
+import GradientBar from "../../components/GradientBar";
+import VideoCard from "../../components/VideoCard";
+import NewsCard from "../../components/NewsCard";
 import React from "react";
 
 type Props = {};

@@ -1,5 +1,5 @@
-import {createRef, RefObject, useRef, useState} from "react";
-import {exists} from "../tools/Null";
+import {useRef, useState} from "react";
+import {exists} from "../../tools/Null";
 import styles from "./TestimonialsAndReviews.module.css";
 
 interface Review {

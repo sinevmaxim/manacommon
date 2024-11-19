@@ -1,7 +1,7 @@
-import Carousel from "../components/Carousel";
-import SingleEventMain from "../components/SingleEventMain";
-import HorizontalEvent from "../components/HorizontalEvent";
-import VerticalEvent from "../components/VerticalEvent";
+import Carousel from "../../components/Carousel";
+import SingleEventMain from "../../components/SingleEventMain";
+import HorizontalEvent from "../../components/HorizontalEvent";
+import VerticalEvent from "../../components/VerticalEvent";
 import React from "react";
 
 type Props = {};
