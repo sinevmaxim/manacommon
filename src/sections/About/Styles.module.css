@@ -1,0 +1,70 @@
+@import '../../constants.css';
+
+.guidingDots {
+	position: absolute;
+	background-color: white;
+	top: 50%;
+	right: 90px;
+	transform: translateY(-50%);
+}
+
+.mainText {
+	font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+	font-size: 112px;
+	font-weight: 950;
+}
+
+.rightColumn {
+	display: flex;
+	flex-direction: column;
+	width: 521px;
+	position: absolute;
+	left: 995px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.middleColumn {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.leftColumn {
+	position: absolute;
+	left: 183px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.infoText {
+	white-space: pre-line;
+	font-size: 22px;
+	font-family: 'Space Grotesk', sans-serif;
+	line-height: 30px;
+}
+
+.propertiesColoredText {
+	color: var(--property);
+}
+
+.agroColoredText {
+	color: var(--agro);
+}
+
+.impactColoredText {
+	color: var(--impact);
+}
+
+.techColoredText {
+	color: var(--tech);
+}
+
+.cultureColoredText {
+	color: var(--culture);
+}
+
+.commerceColoredText {
+	color: var(--commerce);
+}
